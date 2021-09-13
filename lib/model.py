@@ -90,16 +90,16 @@ class Stocks_profit(object):
 
 class All_Data(object):
 
-    all_around_data = "I'm all around data!"
+    amount_last_for_profit = 0
 
     def __init__(self, name, price, profit):
         self._name = name
         self._price = price
         self._profit = profit
-        
+        self.profit_status = []
 
-    def add_status(self, status):
-        self.data_status.append(status)
+    def add_profit_status(self, status):
+        self.profit_status.append(status)
 
     def _getNameFromClass(self):
         return "blabla je veux son nom : {}".format(Stocks_name(self._name).name)
@@ -115,7 +115,6 @@ class All_Data(object):
         # print('Set called...')
         print(new_profit)
         if len(new_profit) < 0:
-            
             self._profit = "No data inside!"
         else:
             self._profit = new_profit
@@ -126,11 +125,11 @@ class All_Data(object):
 # d = Stocks_name('action-1')
 # e = Stocks_price('10.25')
 # f = Stocks_profit('210')
-g = All_Data('action-1', '10.25','210')
-# d = Stocks_name('action-1'), 
-e = All_Data('action-2', '20.50','420')
-print("e._name")
-print(e._name)
+# g = All_Data('action-1', '10.25','210')
+# d = Stocks_name('action-1'),
+# e = All_Data('action-2', '20.50','420')
+# print("e._name")
+# print(e._name)
 # print(Stocks_name)
 # print("d.***")
 # print(d.name)
@@ -148,19 +147,17 @@ print(e._name)
 # print("f.profit")
 # print(f.profit)
 
+# print("g.data")
+# print(g.stocks_data)
+# print(g.stocks_data[2])
+# print(g.all_around_data)
+# print(g._getNameFromClass())
 
-
-print("g.data")
-print(g.stocks_data)
-print(g.stocks_data[2])
-print(g.all_around_data)
-print(g._getNameFromClass())
-
-print("e.data")
-print(e.stocks_data)
-print(e.stocks_data[2])
-print(e.all_around_data)
-print(e._getNameFromClass())
+# print("e.data")
+# print(e.stocks_data)
+# print(e.stocks_data[2])
+# print(e.all_around_data)
+# print(e._getNameFromClass())
 # FAIRE UNE SAVE DES DONNEES. LES TRAITEES ET SAUVER LE RESULTAT.
 
 
