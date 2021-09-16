@@ -137,21 +137,59 @@ for data in combinaisons:
 
 print(len(dataset))
 
-most_value = []
+most_value = 0
+combination_for_most_value = []
+special_value = []
+maximum_cost = 500
+most_profit = 0
+combination_profit_most_value = []
 
-with open(jsonFilePath, 'r') as f:
-    distros_dict = json.load(f)
+with open(jsonFilePath, 'r') as file:
+    distros_dict = json.load(file)
 for data in dataset:
+    #print(data)
     #print("distro")
     #print(distro)
     #print(distro['total_profit'])
-    print("dataset[1048570]")
-    print(dataset[1048570])
+    #print("data")
+    #print(data)
     total_test = 0
     for stock_value in data:
-        print(stock_value)
+        #print(stock_value)
         total_test += distros_dict[stock_value]['cost']
-    print(total_test)
+    if total_test < maximum_cost:
+        combination_for_most_value.append(data)
+        if most_value < total_test:
+            #print(total_test)
+            most_value = total_test
+            special_value = data
+print(most_value)
+print(len(combination_for_most_value))
+print(len(combination_for_most_value))
+print(special_value)
+
+for data in combination_for_most_value:
+    total_profit = 0
+    for profit in data:
+        total_profit += distros_dict[profit]['total_profit']
+    if total_profit > most_profit:
+        most_profit = total_profit
+        combination_profit_most_value = data
+        print(data)
+        print(most_profit)
+        
+
+print(most_profit)
+print(combination_profit_most_value)
+price_stock = 0
+for data in combination_profit_most_value:
+    #print(data)
+    price_stock += distros_dict[data]['cost']
+print(price_stock)
+
+
+
+
 
 
 
