@@ -33,7 +33,6 @@ def powerset(iterable):
 # Get all the possible data stocks
 def getCombination(combinaisons):
     for data in combinaisons:
-        print(data)
         dataset.append(data)
 
 # Get the maximum value of the data set
@@ -71,7 +70,7 @@ def calculateFinalProfit():
     price_stock = 0
     for data in all_profit_data[0]:
         price_stock += distros_dict[data]['cost']
-        
+
 
 csvFilePath = '../Stocks_data.csv'
 jsonFilePath = '../json_file_stocks_data.json'
